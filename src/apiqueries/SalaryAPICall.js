@@ -1,6 +1,3 @@
-// CURRENTLY ONLY GETS 1 YEAR SALARY DATA
-    // IN THE FUTURE, WILL GET 3 YEAR AND 6 YEAR SALARY DATA
-
 const api_key = 'PP7IoOsMzwaWH8g3z9fWzP3SqVTOPk8qr2ugcSu9';
 
 export async function salariesQuery(schoolId, majorCIP) {
