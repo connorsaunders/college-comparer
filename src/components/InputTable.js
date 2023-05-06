@@ -18,13 +18,17 @@ function InputTable(props) {
 
     // Call tuitionQuery and update the tableData array with the results
     const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
+    console.log("tuition: ",tuition1)
 
     // Call salariesQuery and update the tableData array with the results
     const majorCIP = Major_2_CIPCode[input2];
-    const salary1 = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
+    const salaries = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
+    console.log("salaries: ",salaries)
+    const year1_salary = salaries[0];
+    const year4_salary = salaries[1];
 
     // Update the tableData array with the results
-    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, salary1 }];
+    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }];
     setTableData(updatedTableData);
   };
 
@@ -47,7 +51,7 @@ function InputTable(props) {
               <th>Major</th>
               <th>In/Out State</th>
               <th colSpan="2">Cost of attendance</th>
-              <th colSpan="3">Median Salary</th>
+              <th colSpan="2">Median Salary</th>
               <th></th> {/* Add an additional column for the delete button */}
             </tr>
             <tr>
@@ -57,8 +61,7 @@ function InputTable(props) {
               <th>1 yrs.</th>
               <th>4 yrs.</th>
               <th>1 yrs.</th>
-              <th>3 yrs.</th>
-              <th>6 yrs.</th>
+              <th>4 yrs.</th>
               <th></th>
             </tr>
           </thead>
@@ -71,9 +74,8 @@ function InputTable(props) {
                 <td>{data.tuitionState}</td>
                 <td>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{data.salary1 ? data.salary1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{"$ _____"}</td>
-                <td>{"$ _____"}</td>
+                <td>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
+                <td>{data.year4_salary ? data.year4_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>
                   <button onClick={() => handleDelete(index)} style={{ border: 'none', backgroundColor: 'red', color: 'white', width: '30px', height: '30px', borderRadius: '5px', fontSize: '20px', transition: 'background-color 0.5s ease-in-out', marginTop: '5px' }}>
                     -
