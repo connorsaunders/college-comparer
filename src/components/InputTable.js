@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import SearchItems from './SearchItems';
+import '../css/RedDeleteButton.css';
+
 
 //Tuition query import
 import { School_2_Codes_Dict } from "../data/School_to_Code";
@@ -75,9 +77,7 @@ function InputTable(props) {
                 <td>{"$ _____"}</td>
                 <td>{"$ _____"}</td>
                 <td>
-                  <button onClick={() => handleDelete(index)} style={{ border: 'none', backgroundColor: 'red', color: 'white', width: '30px', height: '30px', borderRadius: '5px', fontSize: '20px', transition: 'background-color 0.5s ease-in-out', marginTop: '5px' }}>
-                    -
-                  </button>
+                  <button onClick={() => handleDelete(index)} className="delete-button"> - </button>
                 </td>
               </tr>
             ))}

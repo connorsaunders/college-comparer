@@ -5,16 +5,22 @@ table {
     border-collapse: collapse;
     border: px dotted #ccc;
     margin: 0 auto;
-    
   }
+  
   table td:last-child {
     border: none;
+  }
+  td, th {
+    border: 1px dotted #ccc;
+    padding: 10px;
+    word-wrap: break-word; /* This makes long words break to the next line */
+    white-space: normal; /* This makes the text wrap within the cell */
   }
   
   th:last-child {
     border: none;
   }
-  
+
   td, th {
     border: 1px dotted #ccc;
     padding: 10px;
