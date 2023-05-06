@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import SearchItems from './SearchItems';
+
+//Tuition query import
 import { School_2_Codes_Dict } from "../data/School_to_Code";
 import { tuitionQuery } from '../apiqueries/TuitionAPICall';
+
+//Salary query import
+import { Major_2_CIPCode } from "../data/Major_to_CIPCode";
+import { salariesQuery } from '../apiqueries/SalaryAPICall';
 
 function InputTable(props) {
   const { input1, setInput1, input2, setInput2, tableData, tuitionState, setTuitionState, setTableData } = props;
@@ -12,9 +18,9 @@ function InputTable(props) {
 
     // Call tuitionQuery and update the tableData array with the results
     const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
-    const tuition2 = await tuitionQuery(School_2_Codes_Dict[input2], tuitionState);
+    //const tuition2 = await tuitionQuery(School_2_Codes_Dict[input2], tuitionState);
 
-    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, tuition2 }];
+    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1/*, tuition2*/ }];
     setTableData(updatedTableData);
   };
 
