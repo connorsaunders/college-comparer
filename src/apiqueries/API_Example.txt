@@ -1,0 +1,5 @@
+Tuition Query:
+https://api.data.gov/ed/collegescorecard/v1/schools?id=243744&fields=latest.cost.tuition.in_state,latest.cost.tuition.out_of_state&api_key=PP7IoOsMzwaWH8g3z9fWzP3SqVTOPk8qr2ugcSu9
+
+Result:
+{"metadata":{"page":0,"total":1,"per_page":20},"results":[{"latest.cost.tuition.in_state":56169,"latest.cost.tuition.out_of_state":56169}]}

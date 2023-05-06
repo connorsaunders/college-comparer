@@ -1,0 +1,138 @@
+/*//////////////////////////////////////////////
+/                   Headers
+///////////////////////////////////////////////*/
+.my-header {
+  text-align: center;
+  font-family: 'Times';
+  color: rgb(0, 0, 0);
+  font-size: 36px; 
+  font-family: Arial;
+  margin-bottom: 1px; /* Add a margin bottom of 10px */
+}
+.my-subheader {
+  text-align: center;
+  font-family: 'Times';
+  color: rgb(0, 0, 0);
+  font-size: 23px; 
+  font-family: Arial;
+  margin-top: 5px; /* Add a margin top of 10px */
+}
+
+/*//////////////////////////////////////////////
+/                   Table
+///////////////////////////////////////////////*/
+table {
+  border-collapse: collapse;
+  border: 1px dotted #ccc;
+  margin: 0 auto;
+}
+
+td, th {
+  border: 1px dotted #ccc;
+  padding: 10px;
+}
+
+form {
+  margin-top: 50px;
+  margin-bottom:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+label {
+  margin-right: 10px;
+}
+/*//////////////////////////////////////////////
+/                 Green Button
+///////////////////////////////////////////////*/
+
+button[type="submit"] {
+  margin-left: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  width: 30px; /* increase the width to make the button wider */
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.5s ease-in-out;
+  margin-top: 5px; /* add this line to adjust the margin at the top */
+
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(0, 84, 0);
+  transform: scale(1.2); /* adjust the transform property to scale instead of scale */
+}
+
+
+/*//////////////////////////////////////////////
+/                 Text Blurb
+///////////////////////////////////////////////*/
+
+.input-table-container {
+  margin-bottom: 20px;
+}
+.text-container h3 {
+  margin-bottom: 5px;
+}
+
+.text-container p {
+  margin-top: 10px;
+}
+
+.text-container {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 1px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 500px;
+  padding-bottom: 20px; /* add this line to adjust the padding at the bottom */
+
+}
+
+
+/*//////////////////////////////////////////////
+/                 Input Boxes
+///////////////////////////////////////////////*/
+.input-label input {
+  width: 100%;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*//////////////////////////////////////////////
+/            Index CSS (Do not delete)
+///////////////////////////////////////////////*/
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
