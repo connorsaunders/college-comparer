@@ -24,7 +24,7 @@ function SearchItems(props) {
             options={collegeOptions}
             defaultValue={{ label: "Enter college name", value: null }}
             onChange={option => setInput1(option.value)}
-            styles={{ control: styles => ({ ...styles, width: 200, height: 50 }) }}
+            styles={{ control: styles => ({ ...styles, width: 400, height: 60, fontSize: 25, textAlign: 'center'  }) }}
             menuPlacement="auto"
             menuPosition="fixed"
           />
@@ -34,7 +34,7 @@ function SearchItems(props) {
             options={majorOptions}
             defaultValue={{ label: "Enter major name", value: null }}
             onChange={option => setInput2(option.value)}
-            styles={{ control: styles => ({ ...styles, width: 200, height: 50 }) }}
+            styles={{ control: styles => ({ ...styles, width: 400, height: 60, fontSize: 25, textAlign: 'center'  }) }}
             menuPlacement="auto"
             menuPosition="fixed"
           />
