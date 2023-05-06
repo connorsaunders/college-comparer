@@ -23,8 +23,16 @@
 ///////////////////////////////////////////////*/
 table {
   border-collapse: collapse;
-  border: 1px dotted #ccc;
+  border: px dotted #ccc;
   margin: 0 auto;
+  
+}
+table td:last-child {
+  border: none;
+}
+
+th:last-child {
+  border: none;
 }
 
 td, th {
@@ -109,7 +117,7 @@ button[type="submit"]:hover {
 .input-label input {
   width: 100%;
   padding: 10px;
-  font-size: 17px;
+  font-size: 10px;
 }
 
 .radio-buttons {
@@ -135,4 +143,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.college-select .input-label {
+  font-size: 30px;
+}
+
+.major-select .input-label {
+  font-size: 20px;
 }
