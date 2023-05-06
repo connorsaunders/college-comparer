@@ -18,9 +18,13 @@ function InputTable(props) {
 
     // Call tuitionQuery and update the tableData array with the results
     const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
-    //const tuition2 = await tuitionQuery(School_2_Codes_Dict[input2], tuitionState);
 
-    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1/*, tuition2*/ }];
+    // Call salariesQuery and update the tableData array with the results
+    const majorCIP = Major_2_CIPCode[input2];
+    const salary1 = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
+
+    // Update the tableData array with the results
+    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, salary1 }];
     setTableData(updatedTableData);
   };
 
@@ -58,7 +62,7 @@ function InputTable(props) {
                 <td>{data.tuitionState}</td>
                 <td>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{"$ _____"}</td>
+                <td>{data.salary1 ? data.salary1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>{"$ _____"}</td>
                 <td>{"$ _____"}</td>
                 <td>
