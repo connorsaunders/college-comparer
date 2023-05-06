@@ -42,14 +42,23 @@ function InputTable(props) {
               <th>College</th>
               <th>Major</th>
               <th>In/Out State</th>
-              <th>Cost of attendance (1 yr.)</th>
-              <th>Cost of attendance (4 yrs.)</th>
-              <th>Median Salary (6 yrs.)</th>
-              <th>Median Salary (3 yrs.)</th>
-              <th>Median Salary (1 yr.)</th>
+              <th colSpan="2">Cost of attendance</th>
+              <th colSpan="3">Median Salary</th>
               <th></th> {/* Add an additional column for the delete button */}
             </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>1 yrs.</th>
+              <th>4 yrs.</th>
+              <th>1 yrs.</th>
+              <th>3 yrs.</th>
+              <th>6 yrs.</th>
+              <th></th>
+            </tr>
           </thead>
+
           <tbody>
             {tableData.map((data, index) => (
               <tr key={index}>
@@ -62,7 +71,7 @@ function InputTable(props) {
                 <td>{"$ _____"}</td>
                 <td>{"$ _____"}</td>
                 <td>
-                  <button onClick={() => handleDelete(index)} style={{ border: 'none', backgroundColor: 'red', color: 'white', width: '30px', height: '30px', borderRadius: '5px', fontSize: '20px', transition: 'background-color 0.5s ease-in-out', marginTop: '5px'}}>
+                  <button onClick={() => handleDelete(index)} style={{ border: 'none', backgroundColor: 'red', color: 'white', width: '30px', height: '30px', borderRadius: '5px', fontSize: '20px', transition: 'background-color 0.5s ease-in-out', marginTop: '5px' }}>
                     -
                   </button>
                 </td>
@@ -74,14 +83,14 @@ function InputTable(props) {
       <div className="text-container">
         <h3 style={{ fontSize: '30px' }}>About this Calculator</h3>
         <p>
-          This tool provides data of cost of attendance and median salary of 
-          post graduates for specific college majors. This data is based on 
+          This tool provides data of cost of attendance and median salary of
+          post graduates for specific college majors. This data is based on
           national information of in-state and out of state tuition, as well
           as 1, 3, and 6 year graduates from the college programs.
         </p>
       </div>
     </div>
   );
-}  
+}
 
 export default InputTable;
