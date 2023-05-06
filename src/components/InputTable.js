@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import SearchItems from './SearchItems';
+
+//Table for school codes and query for tuition
 import { School_2_Codes_Dict } from "../data/School_to_Code";
 import { tuitionQuery } from '../apiqueries/TuitionAPICall';
+
+//Table for major codes and query for salary
+import { salaryQuery } from '../apiqueries/SalaryAPICall';
+import { Major_2_CIPCode } from '../data/Major_to_CIPCode';
 
 function InputTable(props) {
   const { input1, setInput1, input2, setInput2, tableData, tuitionState, setTuitionState, setTableData } = props;
