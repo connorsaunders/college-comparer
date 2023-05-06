@@ -1,0 +1,20 @@
+/*//////////////////////////////////////////////
+/                   Header
+///////////////////////////////////////////////*/
+.my-header {
+    text-align: center;
+    font-family: 'Times';
+    color: rgb(0, 0, 0);
+    font-size: 36px; 
+    font-family: Arial;
+    margin-bottom: 1px; /* Add a margin bottom of 10px */
+  }
+  .my-subheader {
+    text-align: center;
+    font-family: 'Times';
+    color: rgb(0, 0, 0);
+    font-size: 23px; 
+    font-family: Arial;
+    margin-top: 5px; /* Add a margin top of 10px */
+  }
+  

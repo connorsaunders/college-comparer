@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/App.css';
+import './css/InputBoxes.css';
+import './css/InputTable.css';
+import './css/AboutThisCalc.css';
+import './css/Header.css';
+import './css/GreenSubmitButton.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
