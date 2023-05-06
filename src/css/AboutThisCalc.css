@@ -1,0 +1,27 @@
+/*//////////////////////////////////////////////
+/                 Text Blurb
+///////////////////////////////////////////////*/
+
+.input-table-container {
+    margin-bottom: 20px;
+  }
+  .text-container h3 {
+    margin-bottom: 5px;
+  }
+  
+  .text-container p {
+    margin-top: 10px;
+  }
+  
+  .text-container {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 1px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 500px;
+    padding-bottom: 20px; /* add this line to adjust the padding at the bottom */
+  
+  }
+  

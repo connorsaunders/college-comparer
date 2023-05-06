@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InputTable from "./components/InputTable";
-import "./css/App.css";
 import { tuitionQuery } from './apiqueries/TuitionAPICall';
 import { School_2_Codes_Dict } from "./data/School_to_Code";
 

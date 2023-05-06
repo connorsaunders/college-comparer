@@ -1,0 +1,43 @@
+/*//////////////////////////////////////////////
+/                Input Table
+///////////////////////////////////////////////*/
+table {
+    border-collapse: collapse;
+    border: px dotted #ccc;
+    margin: 0 auto;
+    
+  }
+  table td:last-child {
+    border: none;
+  }
+  
+  th:last-child {
+    border: none;
+  }
+  
+  td, th {
+    border: 1px dotted #ccc;
+    padding: 10px;
+  }
+  
+  form {
+    margin-top: 50px;
+    margin-bottom:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+
+  
