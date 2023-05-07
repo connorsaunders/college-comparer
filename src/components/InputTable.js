@@ -50,8 +50,8 @@ function InputTable(props) {
   return (
     <div>
       <div className="input-table-container">
-        <h1 className="my-header">College Comparison Tool</h1>
-        <h2 className="my-subheader">Find and Compare the ROI in your Education</h2>
+        <h1 className="my-header">College Cost Comparison Tool</h1>
+        <h2 className="my-subheader"><em>Get the ROI you need from your education!</em></h2>
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
         <table className="my-table">
           <thead>
@@ -96,11 +96,16 @@ function InputTable(props) {
       <div className="text-container">
         <h3 style={{ fontSize: '30px' }}>About this Calculator</h3>
         <p>
-          This tool provides data of cost of attendance and median salary of
-          post graduates for specific college majors. This data is based on
-          national information of in-state and out of state tuition, as well
-          as the salaries for students that earned Bachelor's degrees one and 
-          four years after graduation.
+        The data provided by this tool comes from the College Scorecard, 
+        which offers comprehensive information about colleges and universities 
+        in the United States. Specifically, this tool provides information 
+        on the cost of attendance and median salaries of post-graduates 
+        for specific college majors. The data used in this tool is based 
+        on national information of in-state and out-of-state tuition, 
+        as well as the salaries for students who earned Bachelor's degrees 
+        one and four years after graduation. To access the College Scorecard 
+        and learn more about the data used in this tool, please visit their 
+        website at <a href="https://collegescorecard.ed.gov/">https://collegescorecard.ed.gov/</a>.
         </p>
       </div>
     </div>
