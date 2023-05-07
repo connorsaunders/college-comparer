@@ -21,9 +21,6 @@ export async function salariesQuery(schoolId, majorCIP) {
     for (const result of data.results) {
       for (const program of result['latest.programs.cip_4_digit']) {
         if (program.credential.level === 3) {
-          console.log("setting earnings")
-          console.log(program.earnings['1_yr'].overall_median_earnings)
-          console.log(program.earnings['4_yr'].overall_median_earnings)
           earnings[0] = program.earnings['1_yr'].overall_median_earnings;
           earnings[1] = program.earnings['4_yr'].overall_median_earnings;
         }

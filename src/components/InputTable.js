@@ -1,15 +1,22 @@
 //import React, { useState } from 'react';
 import SearchItems from './SearchItems';
+
+//import css
 import '../css/RedDeleteButton.css';
+import '../css/InputTable.css';
+import '../css/SalaryCells.css';
 
-
-//Tuition query import
+//import tuition query
 import { School_2_Codes_Dict } from "../data/School_to_Code";
 import { tuitionQuery } from '../apiqueries/TuitionAPICall';
 
-//Salary query import
+//import salary query
 import { Major_2_CIPCode } from "../data/Major_to_CIPCode";
 import { salariesQuery } from '../apiqueries/SalaryAPICall';
+
+//import getClassSalary utility function
+import { getClassForSalary1Year } from '../utils/utils';
+import { getClassForSalary4Year } from '../utils/utils';
 
 function InputTable(props) {
   const { input1, setInput1, input2, setInput2, tableData, tuitionState, setTuitionState, setTableData } = props;
@@ -76,8 +83,8 @@ function InputTable(props) {
                 <td>{data.tuitionState}</td>
                 <td>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{data.year4_salary ? data.year4_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
+                <td className={getClassForSalary1Year(data.year1_salary, tableData)}>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
+                <td className={getClassForSalary4Year(data.year4_salary, tableData)}>{data.year4_salary ? data.year4_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
                 <td>
                   <button onClick={() => handleDelete(index)} className="delete-button"> - </button>
                 </td>
@@ -92,7 +99,8 @@ function InputTable(props) {
           This tool provides data of cost of attendance and median salary of
           post graduates for specific college majors. This data is based on
           national information of in-state and out of state tuition, as well
-          as 1, 3, and 6 year graduates from the college programs.
+          as the salaries for students that earned Bachelor's degrees one and 
+          four years after graduation.
         </p>
       </div>
     </div>

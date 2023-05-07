@@ -1,0 +1,11 @@
+.salary-cell-high {
+    background-color: #7FFF7F; /* Green */
+  }
+  
+  .salary-cell-medium {
+    background-color: #FFFF7F; /* Yellow */
+  }
+  
+  .salary-cell-low {
+    background-color: #FF7F7F; /* Red */
+  }

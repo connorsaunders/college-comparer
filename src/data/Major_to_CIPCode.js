@@ -190,8 +190,6 @@ export const Major_2_CIPCode  = {
 "Zoology/Animal Biology": "2607",
 "Air Transportation": "4901",
 "Pharmacy, Pharmaceutical Sciences, and Administration": "5120",
-"Veterinary Medicine": "5124",
-"Veterinary Biomedical and Clinical Sciences": "5125",
 "Architecture and Related Services, Other": "0499",
 "Homeland Security, Law Enforcement, Firefighting and Related Protective Services, Other": "4399",
 "Legal Support Services": "2203",
@@ -224,5 +222,3 @@ export const Major_2_CIPCode  = {
 "Mechanics and Repairers, General": "4700",
 "Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician (HAC, HACR, HVAC, HVACR)": "4702"
 }
-
-console.log(Major_2_CIPCode["Computer Science"])
