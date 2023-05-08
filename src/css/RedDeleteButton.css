@@ -1,6 +1,6 @@
 button.delete-button {
   border: none;
-  background-color: red;
+  background-color: rgb(219, 24, 24);
   color: white;
   width: 35px;
   height: 35px;
@@ -18,7 +18,7 @@ button.delete-button:hover {
 }
 
 button.delete-button:active {
-  background-color: red;
+  background-color: rgb(219, 24, 24);
   transform: scale(0.95);
   box-shadow: none;
 }
