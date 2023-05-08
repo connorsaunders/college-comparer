@@ -23,19 +23,22 @@ function InputTable(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!input1 || !input2) { // checks if input1 or input2 is blank
+      return;
+    }
     props.onSubmit({ input1, input2 });
-
+  
     // Call tuitionQuery and update the tableData array with the results
     const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
     console.log("tuition: ",tuition1)
-
+  
     // Call salariesQuery and update the tableData array with the results
     const majorCIP = Major_2_CIPCode[input2];
     const salaries = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
     console.log("salaries: ",salaries)
     const year1_salary = salaries[0];
     const year4_salary = salaries[1];
-
+  
     // Update the tableData array with the results
     const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }];
     setTableData(updatedTableData);
