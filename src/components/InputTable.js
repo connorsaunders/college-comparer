@@ -27,18 +27,18 @@ function InputTable(props) {
       return;
     }
     props.onSubmit({ input1, input2 });
-  
+
     // Call tuitionQuery and update the tableData array with the results
     const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
-    console.log("tuition: ",tuition1)
-  
+    console.log("tuition: ", tuition1)
+
     // Call salariesQuery and update the tableData array with the results
     const majorCIP = Major_2_CIPCode[input2];
     const salaries = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
-    console.log("salaries: ",salaries)
+    console.log("salaries: ", salaries)
     const year1_salary = salaries[0];
     const year4_salary = salaries[1];
-  
+
     // Update the tableData array with the results
     const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }];
     setTableData(updatedTableData);
@@ -59,17 +59,14 @@ function InputTable(props) {
         <table className="my-table">
           <thead>
             <tr>
-              <th>College</th>
-              <th>Major</th>
-              <th>In/Out State</th>
+              <th rowSpan="2">College</th>
+              <th rowSpan="2">Major</th>
+              <th rowSpan="2">In/Out State</th>
               <th colSpan="2">Cost of attendance</th>
               <th colSpan="2">Median Salary</th>
               <th></th> {/* Add an additional column for the delete button */}
             </tr>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
               <th>1 yrs.</th>
               <th>4 yrs.</th>
               <th>1 yrs.</th>
@@ -77,7 +74,6 @@ function InputTable(props) {
               <th></th>
             </tr>
           </thead>
-
           <tbody>
             {tableData.map((data, index) => (
               <tr key={index}>
@@ -99,16 +95,16 @@ function InputTable(props) {
       <div className="text-container">
         <h3 style={{ fontSize: '30px' }}>About this Calculator</h3>
         <p>
-        The data provided by this tool comes from the College Scorecard, 
-        which offers comprehensive information about colleges and universities 
-        in the United States. Specifically, this tool provides information 
-        on the cost of attendance and median salaries of post-graduates 
-        for specific college majors. The data used in this tool is based 
-        on national information of in-state and out-of-state tuition, 
-        as well as the salaries for students who earned Bachelor's degrees 
-        one and four years after graduation. To access the College Scorecard 
-        and learn more about the data used in this tool, please visit their 
-        website at <a href="https://collegescorecard.ed.gov/">https://collegescorecard.ed.gov/</a>.
+          The data provided by this tool comes from the College Scorecard,
+          which offers comprehensive information about colleges and universities
+          in the United States. Specifically, this tool provides information
+          on the cost of attendance and median salaries of post-graduates
+          for specific college majors. The data used in this tool is based
+          on national information of in-state and out-of-state tuition,
+          as well as the salaries for students who earned Bachelor's degrees
+          one and four years after graduation. To access the College Scorecard
+          and learn more about the data used in this tool, please visit their
+          website at <a href="https://collegescorecard.ed.gov/">https://collegescorecard.ed.gov/</a>.
         </p>
       </div>
     </div>
