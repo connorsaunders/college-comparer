@@ -1,23 +1,25 @@
-/*//////////////////////////////////////////////
-/                 Green Button
-///////////////////////////////////////////////*/
-
 button[type="submit"] {
-    margin-left: 10px;
-    background-color: green;
-    color: white;
-    border: none;
-    width: 30px; /* increase the width to make the button wider */
-    height: 30px;
-    border-radius: 5px;
-    font-size: 20px;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 12px; /* add this line to adjust the margin at the top */
-  
-  }
-  
-  button[type="submit"]:hover {
-    background-color: rgb(0, 84, 0);
-    transform: scale(1.2); /* adjust the transform property to scale instead of scale */
-  }
-  
+  margin-top: 12px;
+  margin-left: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 0;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+button[type="submit"]:active {
+  background-color: #388e3c;
+  transform: scale(0.95);
+  box-shadow: none;
+}

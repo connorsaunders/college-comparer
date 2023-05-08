@@ -4,7 +4,7 @@ import colleges from '../data/colleges';
 import majors from '../data/majors';
 
 function SearchItems(props) {
-  const { input1, setInput1, input2, setInput2, handleSubmit, tuitionState, setTuitionState } = props;
+  const {setInput1, setInput2, handleSubmit, tuitionState, setTuitionState } = props;
 
   const collegeOptions = colleges.map(college => ({
     value: college.name,

@@ -1,18 +1,24 @@
 button.delete-button {
-    border: none;
-    background-color: red;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    font-size: 20px;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 5px;
-  }
-  
-  button.delete-button:hover {
-    background-color: darkred;
-    transform: scale(1.2); /* adjust the transform property to scale instead of scale */
+  border: none;
+  background-color: red;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 0;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+  margin-top: 5px;
+  cursor: pointer;
+}
 
-  }
-  
+button.delete-button:hover {
+  background-color: darkred;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+button.delete-button:active {
+  background-color: red;
+  transform: scale(0.95);
+  box-shadow: none;
+}
