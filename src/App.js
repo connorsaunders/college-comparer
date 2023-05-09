@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import InputTable from "./components/InputTable";
+
 import { tuitionQuery } from './apiqueries/TuitionAPICall';
 import { salariesQuery } from './apiqueries/SalaryAPICall';
 import { School_2_Codes_Dict } from "./data/School_to_Code";
 import { Major_2_CIPCode } from "./data/Major_to_CIPCode";
+
+import InputTable from "./components/InputTable";
+import AboutCalculator from "./components/AboutCalculator";
+
+//Import bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './css/InputTable.css';
+
 
 function App() {
   const [input1, setInput1] = useState("");
@@ -23,18 +32,21 @@ function App() {
   };
 
   return (
+    //Input table component
     <div>
       <InputTable
-        input1={input1}
-        setInput1={setInput1}
-        input2={input2}
-        setInput2={setInput2}
-        tableData={tableData}
-        onSubmit={handleSubmit}
-        tuitionState={tuitionState}
-        setTuitionState={setTuitionState}
-        setTableData={setTableData} // add this prop
+      input1={input1}
+      setInput1={setInput1}
+      input2={input2}
+      setInput2={setInput2}
+      tableData={tableData}
+      onSubmit={handleSubmit}
+      tuitionState={tuitionState}
+      setTuitionState={setTuitionState}
+      setTableData={setTableData} // add this prop
       />
+      <br />
+      <AboutCalculator />
     </div>
   );
 }
