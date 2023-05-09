@@ -58,8 +58,8 @@ td:last-child, th:last-child {
 }
 
 .no-data {
-  background-color: #262626;
-  color: #fff;
+  background-color: #f1f1f1;
+  color: #000000;
 }
 
 .slide-enter {
@@ -68,5 +68,5 @@ td:last-child, th:last-child {
 
 .slide-enter-active {
   transform: translateY(0);
-  transition: transform 500ms ease-out;
+  transition: transform 300ms ease-out;
 }

@@ -43,9 +43,9 @@ function InputTable(props) {
         <table className="my-table">
           <thead>
             <tr>
-              <th rowSpan="2">College</th>
-              <th rowSpan="2">Major</th>
-              <th rowSpan="2">Residency</th>
+            <th rowSpan="2" style={{ fontSize: '25px' }}>College</th>
+                <th rowSpan="2" style={{ fontSize: '25px' }}>Major</th>
+                <th rowSpan="2" style={{ fontSize: '20px' }}>Residency</th>
               <th colSpan="2">Cost of attendance</th>
               <th colSpan="2">Median Salary</th>
               <th></th> {/* Add an additional column for the delete button */}
@@ -61,7 +61,7 @@ function InputTable(props) {
           <tbody>
             <TransitionGroup component={null}>
               {tableData.map((data, index) => (
-                <CSSTransition key={index} timeout={500} classNames="slide">
+                  <CSSTransition key={index} timeout={{ enter: 200, exit: 0 }} classNames="slide">
                   <tr key={index} className="slide">
                     <td>{data.input1}</td>
                     <td>{data.input2}</td>
