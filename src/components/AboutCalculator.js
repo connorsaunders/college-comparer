@@ -2,6 +2,8 @@
 import { Accordion, Card, Container } from 'react-bootstrap';
 //import css
 import '../css/AboutCalculator.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function AboutCalculator() {
     return (

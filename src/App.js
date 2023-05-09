@@ -8,12 +8,6 @@ import { Major_2_CIPCode } from "./data/Major_to_CIPCode";
 import InputTable from "./components/InputTable";
 import AboutCalculator from "./components/AboutCalculator";
 
-//Import bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import './css/InputTable.css';
-
-
 function App() {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");

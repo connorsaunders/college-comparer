@@ -40,14 +40,14 @@ function InputTable(props) {
         <h1 className="my-header">College Cost Comparison Tool</h1>
         <h2 className="my-subheader"><em>Get the ROI you need from your education!</em></h2>
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
-        <table className="my-table">
+        <table className="my-table input-table">
           <thead>
             <tr>
             <th rowSpan="2" style={{ fontSize: '25px' }}>College</th>
-                <th rowSpan="2" style={{ fontSize: '25px' }}>Major</th>
-                <th rowSpan="2" style={{ fontSize: '20px' }}>Residency</th>
-              <th colSpan="2">Cost of attendance</th>
-              <th colSpan="2">Median Salary</th>
+              <th rowSpan="2" style={{ fontSize: '25px' }}>Major</th>
+              <th rowSpan="2" style={{ fontSize: '25px' }}>Residency</th>
+              <th colSpan="2" style={{ fontSize: '18px' }}>Cost of Attendance</th>
+              <th colSpan="2" style={{ fontSize: '18px' }}>Median Salary</th>
               <th></th> {/* Add an additional column for the delete button */}
             </tr>
             <tr>

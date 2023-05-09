@@ -1,6 +1,3 @@
-/*//////////////////////////////////////////////
-/                Input Table
-///////////////////////////////////////////////*/
 table {
   border-collapse: collapse;
   border: px dotted #ccc;
@@ -9,14 +6,14 @@ table {
   table-layout: fixed;
 }
 
-td, th {
+.my-table.input-table td, .my-table.input-table th {
   border: 1px dotted #ccc;
   padding: 10px;
   word-wrap: break-word;
   white-space: normal;
 }
 
-th:last-child {
+.my-table.input-table th:last-child {
   border: none;
   background-color: white;
 }
@@ -35,21 +32,22 @@ form label {
   align-items: center;
 }
 
-thead {
+.my-table.input-table thead {
   background-color: #f1f1f1;
   border-bottom: none;
+  text-align: center;
+
 }
 
-thead tr:first-child th {
+.my-table.input-table thead tr:first-child th {
   border-bottom: none;
-  
 }
 
-thead tr:nth-child(2) th {
+.my-table.input-table thead tr:nth-child(2) th {
   border-top: none;
 }
 
-td:last-child, th:last-child {
+.my-table.input-table td:last-child, .my-table.input-table th:last-child {
   border: none;
 }
 
@@ -57,16 +55,16 @@ td:last-child, th:last-child {
   text-align: center;
 }
 
-.no-data {
-  background-color: #f1f1f1;
-  color: #000000;
+.my-table.input-table .no-data {
+  background-color: #262626;
+  color: #ffffff;
 }
 
-.slide-enter {
+.my-table.input-table .slide-enter {
   transform: translateY(-100%);
 }
 
-.slide-enter-active {
+.my-table.input-table .slide-enter-active {
   transform: translateY(0);
   transition: transform 300ms ease-out;
 }
