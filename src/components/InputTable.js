@@ -6,14 +6,6 @@ import '../css/RedDeleteButton.css';
 import '../css/InputTable.css';
 import '../css/SalaryCells.css';
 
-//import tuition query
-import { School_2_Codes_Dict } from "../data/School_to_Code";
-import { tuitionQuery } from '../apiqueries/TuitionAPICall';
-
-//import salary query
-import { Major_2_CIPCode } from "../data/Major_to_CIPCode";
-import { salariesQuery } from '../apiqueries/SalaryAPICall';
-
 //import getClassSalary utility function
 import { getClassForSalary1Year } from '../utils/utils';
 import { getClassForSalary4Year } from '../utils/utils';
@@ -27,22 +19,8 @@ function InputTable(props) {
       return;
     }
     props.onSubmit({ input1, input2 });
-
-    // Call tuitionQuery and update the tableData array with the results
-    const tuition1 = await tuitionQuery(School_2_Codes_Dict[input1], tuitionState);
-    console.log("tuition: ", tuition1)
-
-    // Call salariesQuery and update the tableData array with the results
-    const majorCIP = Major_2_CIPCode[input2];
-    const salaries = await salariesQuery(School_2_Codes_Dict[input1], majorCIP);
-    console.log("salaries: ", salaries)
-    const year1_salary = salaries[0];
-    const year4_salary = salaries[1];
-
-    // Update the tableData array with the results
-    const updatedTableData = [...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }];
-    setTableData(updatedTableData);
   };
+
 
   const handleDelete = (index) => {
     const updatedTableData = [...tableData];
@@ -80,10 +58,10 @@ function InputTable(props) {
                 <td>{data.input1}</td>
                 <td>{data.input2}</td>
                 <td>{data.tuitionState}</td>
-                <td>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td className={getClassForSalary1Year(data.year1_salary, tableData)}>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
-                <td className={getClassForSalary4Year(data.year4_salary, tableData)}>{data.year4_salary ? data.year4_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : '-'}</td>
+                <td className={`center ${data.tuition1 ? '' : 'no-data'}`}>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
+<td className={`center ${data.tuition1 ? '' : 'no-data'}`}>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
+<td className={`center ${data.year1_salary ? '' : 'no-data'} ${getClassForSalary1Year(data.year1_salary, tableData)}`}>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
+<td className={`center ${data.year4_salary ? '' : 'no-data'} ${getClassForSalary4Year(data.year4_salary, tableData)}`}>{data.year4_salary ? data.year4_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
                 <td>
                   <button onClick={() => handleDelete(index)} className="delete-button"> - </button>
                 </td>

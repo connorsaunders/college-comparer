@@ -52,3 +52,12 @@ thead tr:nth-child(2) th {
 td:last-child, th:last-child {
   border: none;
 }
+
+.center {
+  text-align: center;
+}
+
+.no-data {
+  background-color: #262626;
+  color: #fff;
+}
