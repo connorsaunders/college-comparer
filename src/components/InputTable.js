@@ -41,9 +41,9 @@ function InputTable(props) {
           <table className="my-table">
             <thead>
               <tr>
-                <th rowSpan="2">College</th>
-                <th rowSpan="2">Major</th>
-                <th rowSpan="2">In/Out State</th>
+                <th rowSpan="2" style={{ fontSize: '25px' }}>College</th>
+                <th rowSpan="2" style={{ fontSize: '25px' }}>Major</th>
+                <th rowSpan="2" style={{ fontSize: '20px' }}>In/Out State</th>
                 <th colSpan="2">Cost of attendance</th>
                 <th colSpan="2">Median Salary</th>
                 <th></th> {/* Add an additional column for the delete button */}
