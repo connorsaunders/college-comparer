@@ -3,6 +3,11 @@ import Select from 'react-select';
 import colleges from '../data/colleges';
 import majors from '../data/majors';
 
+//import css
+import '../css/RadioButtons.css';
+import '../css/InputBoxes.css';
+import '../css/GreenSubmitButton.css';
+
 function SearchItems(props) {
   const {setInput1, setInput2, handleSubmit, tuitionState, setTuitionState } = props;
 
@@ -42,14 +47,10 @@ function SearchItems(props) {
         <button type="submit">+</button>
       </div>
       <div className="radio-buttons">
-        <label>
-          <input type="radio" value="In State" checked={tuitionState === "In State"} onChange={() => setTuitionState("In State")} />
-          In State
-        </label>
-        <label>
-          <input type="radio" value="Out of State" checked={tuitionState === "Out of State"} onChange={() => setTuitionState("Out of State")} />
-          Out of State
-        </label>
+        <input type="radio" id="In-State" value="In State" checked={tuitionState === "In State"} onChange={() => setTuitionState("In State")} />
+        <label htmlFor="In-State" className="radio-label">In-State</label> 
+        <input type="radio" id="Out-Of-State" value="Out of State" checked={tuitionState === "Out of State"} onChange={() => setTuitionState("Out of State")} />
+        <label htmlFor="Out-Of-State" className="radio-label">Out-Of-State</label> 
       </div>
     </form>
   );
