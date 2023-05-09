@@ -63,7 +63,7 @@ td:last-child, th:last-child {
 }
 
 .slide-enter {
-  transform: translateY(+50%);
+  transform: translateY(-50%);
 }
 
 .slide-enter-active {
