@@ -41,27 +41,28 @@ function InputTable(props) {
         <h2 className="my-subheader"><em>Get the ROI you need from your education!</em></h2>
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
         <table className="my-table input-table">
-          <thead>
-            <tr>
-            <th rowSpan="2" style={{ fontSize: '25px' }}>College</th>
-              <th rowSpan="2" style={{ fontSize: '25px' }}>Major</th>
-              <th rowSpan="2" style={{ fontSize: '25px' }}>Residency</th>
-              <th colSpan="2" style={{ fontSize: '18px' }}>Cost of Attendance</th>
-              <th colSpan="2" style={{ fontSize: '18px' }}>Median Salary</th>
-              <th></th> {/* Add an additional column for the delete button */}
-            </tr>
-            <tr>
-              <th>1 yrs.</th>
-              <th>4 yrs.</th>
-              <th>1 yrs.</th>
-              <th>4 yrs.</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+  <thead>
+    <tr>
+      <th className="college-cell" rowSpan="2">College</th>
+      <th className="major-cell" rowSpan="2">Major</th>
+      <th className="residency-cell" rowSpan="2">Residency</th>
+      <th className="cost-cell" colSpan="2">Cost of Attendance</th>
+      <th className="salary-cell" colSpan="2">Median Salary</th>
+      <th className="delete-cell"></th> {/* Add an additional column for the delete button */}
+    </tr>
+    <tr>
+      <th className="years-cell">1 yrs.</th>
+      <th className="years-cell">4 yrs.</th>
+      <th className="years-cell">1 yrs.</th>
+      <th className="years-cell">4 yrs.</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
             <TransitionGroup component={null}>
               {tableData.map((data, index) => (
-                  <CSSTransition key={index} timeout={{ enter: 200, exit: 0 }} classNames="slide">
+                <CSSTransition key={index} timeout={{ enter: 200, exit: 0 }} classNames="slide">
                   <tr key={index} className="slide">
                     <td>{data.input1}</td>
                     <td>{data.input2}</td>

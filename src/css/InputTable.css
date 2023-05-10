@@ -1,9 +1,6 @@
 table {
-  border-collapse: collapse;
-  border: px dotted #ccc;
   margin: 0 auto;
   min-width: 900px;
-  table-layout: fixed;
 }
 
 .my-table.input-table td, .my-table.input-table th {
@@ -12,39 +9,17 @@ table {
   word-wrap: break-word;
   white-space: normal;
 }
+/********** DELETE COLUMN ************/
 
 .my-table.input-table th:last-child {
   border: none;
   background-color: white;
 }
-
-form {
-  margin: 50px auto 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
+/*****************************************/
 .my-table.input-table thead {
   background-color: #f1f1f1;
   border-bottom: none;
   text-align: center;
-
-}
-
-.my-table.input-table thead tr:first-child th {
-  border-bottom: none;
-}
-
-.my-table.input-table thead tr:nth-child(2) th {
-  border-top: none;
 }
 
 .my-table.input-table td:last-child, .my-table.input-table th:last-child {
@@ -59,12 +34,45 @@ form label {
   background-color: #262626;
   color: #ffffff;
 }
-
+/********** SLIDING ANIMATION ************/
 .my-table.input-table .slide-enter {
   transform: translateY(-100%);
 }
-
 .my-table.input-table .slide-enter-active {
   transform: translateY(0);
   transition: transform 300ms ease-out;
 }
+/*****************************************/
+
+/********** INDIVIDUAL CELLS ************/
+.my-table.input-table .college-cell {
+  width: 300px;
+  font-size: 25px;
+}
+
+.my-table.input-table .major-cell {
+  width: 250px;
+  font-size: 25px;
+}
+
+.my-table.input-table .residency-cell {
+  width: 200px;
+  font-size: 25px;
+}
+
+.my-table.input-table .cost-cell, 
+.my-table.input-table .salary-cell {
+  width: 200px;
+  font-size: 18px;
+  border-bottom: none;
+}
+
+.my-table.input-table .delete-cell {
+  width: 50px;
+}
+
+.my-table.input-table .years-cell {
+  width: 75px;
+  border-top: none;
+}
+/*****************************************/
