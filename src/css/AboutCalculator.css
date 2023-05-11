@@ -1,10 +1,10 @@
 /*//////////////////////////////////////////////
 /                About Calculator
 ///////////////////////////////////////////////*/
-.custom-accordion {
+.accordion-items {
   text-align: justify;
 }
 
-.custom-container {
+.accordion-header {
   text-align: center;
 }

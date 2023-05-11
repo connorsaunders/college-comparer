@@ -8,8 +8,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '../css/RedDeleteButton.css';
 import '../css/InputTable.css';
 import '../css/SalaryCells.css';
-import '../css/Header.css';
-
 
 //import getClassSalary utility function
 import { getClassForSalary1Year } from '../utils/utils';
