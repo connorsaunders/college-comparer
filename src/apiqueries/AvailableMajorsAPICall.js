@@ -1,0 +1,31 @@
+const api_key = 'PP7IoOsMzwaWH8g3z9fWzP3SqVTOPk8qr2ugcSu9';
+
+export async function availableMajorsQuery(schoolId) {
+  const base_url = 'https://api.data.gov/ed/collegescorecard/v1/schools';
+  const fields = 'latest.programs.cip_4_digit.code';
+
+  const params = {
+    api_key: api_key,
+    id: schoolId,
+    fields: fields,
+  };
+
+  const url = new URL(base_url);
+  url.search = new URLSearchParams(params).toString();
+  console.log(url.search);
+
+  try {
+    //get response data from api call
+    const response = await fetch(url);
+    const data = await response.json();
+    //get list of cip codes from response data
+    const cip_codes = data.results[0]['latest.programs.cip_4_digit'];
+    //filter out codes with duplicates values
+    const unique_cip_codes = cip_codes.filter((code, index, self) => self.findIndex(c => c.code === code.code) === index);
+    //return list of unique cip codes
+    return unique_cip_codes;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}

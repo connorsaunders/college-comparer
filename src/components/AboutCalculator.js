@@ -5,7 +5,7 @@ import '../css/AboutCalculator.css';
 
 function AboutCalculator() {
   return (
-    <Container className="px-5">
+    <Container className="mx-auto">
       <Accordion className="accordion-items">
         <Accordion.Item eventKey="0">
           <Accordion.Header className="accordion-header">

@@ -8,6 +8,11 @@ import '../css/RadioButtons.css';
 import '../css/InputBoxes.css';
 import '../css/GreenSubmitButton.css';
 
+//import available majors query
+import { availableMajorsQuery } from '../apiqueries/AvailableMajorsAPICall';
+import { School_2_Codes_Dict } from "../data/School_to_Code";
+import { CIPCode_2_Major } from '../data/CIPCode_to_Major';
+
 function SearchItems(props) {
   const {setInput1, setInput2, handleSubmit, tuitionState, setTuitionState } = props;
   
@@ -20,6 +25,19 @@ function SearchItems(props) {
     value: majors.name,
     label: majors.name
   }))
+
+  //get available majors for a given college using available majors query
+  const getAvailableMajors = async (collegeName) => {
+    const schoolId = School_2_Codes_Dict[collegeName];
+    const majors = await availableMajorsQuery(schoolId);
+    const majorNames = majors.map(major => CIPCode_2_Major[major]);
+    const majorOptions = majorNames.map(majors => ({
+      value: majors.name,
+      label: majors.name
+    }))
+
+    return majorOptions;
+  }
 
   return (
     <form onSubmit={handleSubmit}>
