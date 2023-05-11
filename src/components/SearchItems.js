@@ -10,7 +10,7 @@ import '../css/GreenSubmitButton.css';
 
 function SearchItems(props) {
   const {setInput1, setInput2, handleSubmit, tuitionState, setTuitionState } = props;
-
+  
   const collegeOptions = colleges.map(college => ({
     value: college.name,
     label: college.name

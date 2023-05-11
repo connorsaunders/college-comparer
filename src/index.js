@@ -1,7 +1,11 @@
+// import react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import app main component
 import App from './App';
+// import web vitals component
 import reportWebVitals from './reportWebVitals';
+//import CSS
 import './css/Index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

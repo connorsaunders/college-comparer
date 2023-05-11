@@ -36,9 +36,6 @@ function InputTable(props) {
   return (
     <div className="input-table-container">
       <div className="input-table-container">
-        <br />
-        <h1 className="my-header">College Cost Comparison Tool</h1>
-        <h2 className="my-subheader"><em>Get the ROI you need from your education!</em></h2>
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
         <table className="my-table">
           <thead>

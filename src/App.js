@@ -5,14 +5,13 @@ import { salariesQuery } from './apiqueries/SalaryAPICall';
 import { School_2_Codes_Dict } from "./data/School_to_Code";
 import { Major_2_CIPCode } from "./data/Major_to_CIPCode";
 
+//import components
+import Header from "./components/Header";
 import InputTable from "./components/InputTable";
 import AboutCalculator from "./components/AboutCalculator";
 
 //Import bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import './css/InputTable.css';
-
 
 function App() {
   const [input1, setInput1] = useState("");
@@ -32,8 +31,8 @@ function App() {
   };
 
   return (
-    //Input table component
     <div>
+      <Header />
       <InputTable
       input1={input1}
       setInput1={setInput1}
@@ -43,7 +42,7 @@ function App() {
       onSubmit={handleSubmit}
       tuitionState={tuitionState}
       setTuitionState={setTuitionState}
-      setTableData={setTableData} // add this prop
+      setTableData={setTableData}
       />
       <br />
       <AboutCalculator />
