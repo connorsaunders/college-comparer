@@ -17,3 +17,17 @@
   label {
     margin-right: 10px;
   }
+
+  form {
+  margin: 50px auto 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

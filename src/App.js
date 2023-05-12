@@ -10,9 +10,6 @@ import Header from "./components/Header";
 import InputTable from "./components/InputTable";
 import AboutCalculator from "./components/AboutCalculator";
 
-//Import bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 function App() {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
