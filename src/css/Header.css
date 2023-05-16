@@ -1,20 +1,26 @@
-/*//////////////////////////////////////////////
-/                   Header
-///////////////////////////////////////////////*/
 .my-header {
-    text-align: center;
-    font-family: 'Times';
-    color: rgb(0, 0, 0);
-    font-size: 50px; 
-    font-family: Arial;
-    margin-bottom: 1px; /* Add a margin bottom of 10px */
-  }
-  .my-subheader {
-    text-align: center;
-    font-family: 'Times';
-    color: rgb(0, 0, 0);
-    font-size: 23px; 
-    font-family: Arial;
-    margin-top: 5px; /* Add a margin top of 10px */
-  }
-  
+  text-align: center;
+  font-family: Lucida Sans Unicode, Lucida Grande;
+  font-size: 50px;
+  margin-bottom: 1px;
+  letter-spacing: -1px; /* Decrease the letter spacing */
+}
+
+.my-subheader {
+  text-align: center;
+  font-family: Lucida Sans Unicode, Lucida Grande;
+  color: rgb(0, 0, 0);
+  font-size: 23px;
+  margin-top: 5px;
+}
+
+.highlight {
+  color: black; /* Make the text black */
+  font-weight: bold; /* Make the text bold */
+}
+
+.blue {
+  color: #3e8e41; /* Make the text blue */
+  font-weight: bold; /* Make the text bold */
+
+}

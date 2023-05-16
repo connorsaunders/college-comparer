@@ -5,6 +5,8 @@
     width: 100%;
     padding: 10px;
     font-size: 10px;
+    font-family: Lucida Sans Unicode, Lucida Grande;
+
   }
   
   .radio-buttons {
@@ -12,17 +14,22 @@
     flex-direction: row;
     align-items: center;
     margin-top: 20px;
+    font-family: Lucida Sans Unicode, Lucida Grande;
+
   }
   
   label {
     margin-right: 10px;
+    
+
   }
 
   form {
-  margin: 50px auto 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    font-family: Lucida Sans Unicode, Lucida Grande;
+    margin: 50px auto 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form label {

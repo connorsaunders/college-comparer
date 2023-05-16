@@ -1,13 +1,18 @@
 table {
   margin: 0 auto;
   min-width: 900px;
+  font-family: Lucida Sans Unicode, Lucida Grande;
 }
 
 .my-table.input-table td, .my-table.input-table th {
+  
   border: 1px dotted #ccc;
   padding: 10px;
   word-wrap: break-word;
   white-space: normal;
+  font-family: Lucida Sans Unicode, Lucida Grande;
+
+
 }
 /********** DELETE COLUMN ************/
 
@@ -20,6 +25,7 @@ table {
   background-color: #f1f1f1;
   border-bottom: none;
   text-align: center;
+  
 }
 
 .my-table.input-table td:last-child, .my-table.input-table th:last-child {

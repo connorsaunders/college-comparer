@@ -1,15 +1,8 @@
-//import React, { useState } from 'react';
 import SearchItems from './SearchItems';
-
-//React transition group
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-//import css
 import '../css/RedDeleteButton.css';
 import '../css/InputTable.css';
 import '../css/SalaryCells.css';
-
-//import getClassSalary utility function
 import { getClassForSalary1Year } from '../utils/utils';
 import { getClassForSalary4Year } from '../utils/utils';
 
@@ -24,7 +17,6 @@ function InputTable(props) {
     props.onSubmit({ input1, input2 });
   };
 
-
   const handleDelete = (index) => {
     const updatedTableData = [...tableData];
     updatedTableData.splice(index, 1);
@@ -36,32 +28,31 @@ function InputTable(props) {
       <div className="input-table-container">
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
         <table className="my-table input-table">
-  <thead>
-    <tr>
-      <th className="college-cell" rowSpan="2">College</th>
-      <th className="major-cell" rowSpan="2">Major</th>
-      <th className="residency-cell" rowSpan="2">Residency</th>
-      <th className="cost-cell" colSpan="2">Cost of Attendance</th>
-      <th className="salary-cell" colSpan="2">Median Salary</th>
-      <th className="delete-cell"></th> {/* Add an additional column for the delete button */}
-    </tr>
-    <tr>
-      <th className="years-cell">1 yrs.</th>
-      <th className="years-cell">4 yrs.</th>
-      <th className="years-cell">1 yrs.</th>
-      <th className="years-cell">4 yrs.</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-
+          <thead>
+            <tr>
+              <th className="college-cell" rowSpan="2">College</th>
+              <th className="major-cell" rowSpan="2">Major</th>
+              <th className="residency-cell" rowSpan="2">Residency</th>
+              <th className="cost-cell" colSpan="2">Cost of Attendance</th>
+              <th className="salary-cell" colSpan="2">Median Salary</th>
+              <th className="delete-cell"></th> {/* Add an additional column for the delete button */}
+            </tr>
+            <tr>
+              <th className="years-cell">1 yrs.</th>
+              <th className="years-cell">4 yrs.</th>
+              <th className="years-cell">1 yrs.</th>
+              <th className="years-cell">4 yrs.</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
             <TransitionGroup component={null}>
               {tableData.map((data, index) => (
                 <CSSTransition key={index} timeout={{ enter: 200, exit: 0 }} classNames="slide">
                   <tr key={index} className="slide">
                     <td>{data.input1}</td>
                     <td>{data.input2}</td>
-                    <td>{data.tuitionState}</td>
+                    <td style={{ textAlign: "center", fontSize: "18px" }}>{data.tuitionState}</td>
                     <td className={`center ${data.tuition1 ? '' : 'no-data'}`}>{data.tuition1 ? data.tuition1.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
                     <td className={`center ${data.tuition1 ? '' : 'no-data'}`}>{data.tuition1 ? (data.tuition1 * 4).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>
                     <td className={`center ${data.year1_salary ? '' : 'no-data'} ${getClassForSalary1Year(data.year1_salary, tableData)}`}>{data.year1_salary ? data.year1_salary.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) : 'No Data Available'}</td>

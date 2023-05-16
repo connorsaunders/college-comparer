@@ -4,8 +4,11 @@ function Header() {
     return (
         <div>
             <br />
-            <h1 className="my-header">College Cost Comparison Tool</h1>
-            <h2 className="my-subheader"><em>Get the ROI you need from your education!</em></h2>
+            <h1 className="my-header">
+                <span className="highlight">College Cost </span> 
+                <span className="blue">Comparison Tool</span>
+            </h1>
+            <h2 className="my-subheader">Get the ROI you need from your education!</h2>
         </div>
     )
 }
