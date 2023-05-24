@@ -3,45 +3,41 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
 );
 
-const options = {
-  indexAxis: 'y',
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
+export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'right',
+      position: 'top',
     },
     title: {
       display: true,
-      text: 'Chart.js Horizontal Bar Chart',
+      text: 'Chart.js Line Chart',
     },
   },
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-const data = {
+export const data = {
   labels,
   datasets: [
     {
@@ -60,5 +56,5 @@ const data = {
 };
 
 export function TestChart() {
-  return React.createElement(Bar, { options: options, data: data });
+  return React.createElement(Line, { options: options, data: data });
 }
