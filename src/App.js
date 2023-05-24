@@ -9,6 +9,7 @@ import { Major_2_CIPCode } from "./data/Major_to_CIPCode";
 import Header from "./components/Header";
 import InputTable from "./components/InputTable";
 import AboutCalculator from "./components/AboutCalculator";
+import { TestChart } from './components/TestChart';
 
 //Import bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,6 +47,7 @@ function App() {
       />
       <br />
       <AboutCalculator />
+      <TestChart />
     </div>
   );
 }
