@@ -5,3 +5,5 @@ Commands to uninstall/reinstall npm packages:
     rm -rf node_modules
     npm install
 
+Charting library we're using https://react-chartjs-2.js.org/
+    It also uses chart-js https://www.chartjs.org/docs/latest/
