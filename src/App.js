@@ -42,9 +42,10 @@ function App() {
       setTuitionState={setTuitionState}
       setTableData={setTableData}
       />
-      <br />
-      <AboutCalculator />
+      <br/>
       <TestChart />
+      <br/>
+      <AboutCalculator />
     </div>
   );
 }

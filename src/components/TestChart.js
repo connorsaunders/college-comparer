@@ -56,5 +56,11 @@ export const data = {
 };
 
 export function TestChart() {
-  return React.createElement(Line, { options: options, data: data });
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ height: '500px', width: '100%', maxWidth: '1100px', padding: '0 20px', marginBottom: '10px', marginTop: '10px' }}>
+        <Line data={data} options={options} />
+      </div>
+    </div>
+  );
 }
