@@ -1,1 +1,7 @@
 React Bootstrap - https://react-bootstrap.github.io/
+Chartjs -  https://www.chartjs.org/docs/latest/
+
+Commands to uninstall/reinstall npm packages:
+    rm -rf node_modules
+    npm install
+
