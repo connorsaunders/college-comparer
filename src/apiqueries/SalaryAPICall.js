@@ -1,11 +1,10 @@
-const api_key = 'PP7IoOsMzwaWH8g3z9fWzP3SqVTOPk8qr2ugcSu9';
+const api_key = process.env.REACT_APP_API_KEY;
 
 export async function salariesQuery(schoolId, majorCIP) {
   const base_url = 'https://api.data.gov/ed/collegescorecard/v1/schools';
   const fields = 'school.name,programs.cip_4_digit.earnings.1_yr.overall_median_earnings,programs.cip_4_digit.earnings.4_yr.overall_median_earnings,programs.cip_4_digit.credential.level';
 
   const params = {
-    api_key: api_key,
     id: schoolId,
     fields: fields,
     'latest.programs.cip_4_digit.code': majorCIP
@@ -13,6 +12,9 @@ export async function salariesQuery(schoolId, majorCIP) {
 
   const url = new URL(base_url);
   url.search = new URLSearchParams(params).toString();
+  
+  // Append API key to the URL
+  url.searchParams.append('api_key', api_key);
 
   try {
     const response = await fetch(url);
