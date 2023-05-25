@@ -25,7 +25,6 @@ function App() {
     const year4_salary = salaries[1];
 
     setTableData([...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }]);
-    setTuitionState("In State"); // reset tuitionState to default
   };
 
   return (
