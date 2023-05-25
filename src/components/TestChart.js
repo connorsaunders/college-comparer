@@ -30,25 +30,45 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: 'Price vs. Time',
+    },
+  },
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: 'Years after Graduation',
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: 'Median Salary in $',
+      },
+      ticks: {
+        callback: function(value, index, values) {
+          // Convert the number to a string and add commas as thousand separators
+          return '$' + value.toLocaleString();
+        }
+      }
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['1', '5', '10', '15', '20', '25', '30'];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      label: 'University of Delaware, Computer Science',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 80000 })),
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      label: 'The Pennsylvania State University, Computer Science',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 80000 })),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
