@@ -16,6 +16,9 @@ export async function salariesQuery(schoolId, majorCIP) {
   // Append API key to the URL
   url.searchParams.append('api_key', api_key);
 
+  console.log("Fetching data from URL: ", url.toString());
+
+
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -25,6 +28,7 @@ export async function salariesQuery(schoolId, majorCIP) {
         if (program.credential.level === 3) {
           earnings[0] = program.earnings['1_yr'].overall_median_earnings;
           earnings[1] = program.earnings['4_yr'].overall_median_earnings;
+
         }
       }
     }

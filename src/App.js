@@ -42,7 +42,7 @@ function App() {
       setTableData={setTableData}
       />
       <br/>
-      <TestChart />
+      <TestChart tableData={tableData} />
       <br/>
       <AboutCalculator />
     </div>
