@@ -115,12 +115,7 @@ export const options = {
       },
     },
   },
-      // https://www.chartjs.org/docs/latest/configuration/animations.html
-      animation: {
-        easing: 'easeOutBounce',
-      }
-      
-      
+      // https://www.chartjs.org/docs/latest/configuration/animations.html      
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
