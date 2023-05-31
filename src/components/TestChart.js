@@ -28,71 +28,83 @@ ChartJS.register(
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                  Table Options
 ////////////////////////////////////////////////////////////////////////////////////////
+let datasetIndex = 0; // Global counter
 
 export const options = {
+
   responsive: true,
-  
-  plugins: {
-    legend: {
-      position: 'top',
-      labels: {
-        generateLabels: (chart) => {
-          let legends = chart.data.datasets.map((dataset, i) => {
-            return {
-              text: dataset.label,
-              fillStyle: dataset.borderColor,
-              hidden: dataset.hidden ?? false,
-              lineCap: dataset.borderCapStyle,
-              lineDash: dataset.borderDash,
-              lineDashOffset: dataset.borderDashOffset,
-              lineJoin: dataset.borderJoinStyle,
-              lineWidth: dataset.borderWidth,
-              strokeStyle: dataset.borderColor,
-              pointStyle: dataset.pointStyle,
-              datasetIndex: i
-            };
-          });
-          let pairLegends = [];
-          for (let i = 0; i < legends.length; i += 2) {
-            pairLegends.push({
-              text: `${legends[i].text}`,
 
-              fillStyle: legends[i].fillStyle,
-
-              hidden: legends[i].hidden,
-              lineCap: legends[i].lineCap,
-              lineDash: legends[i].lineDash,
-              lineDashOffset: legends[i].lineDashOffset,
-              lineJoin: legends[i].lineJoin,
-              lineWidth: legends[i].lineWidth,
-              strokeStyle: legends[i].strokeStyle,
-              pointStyle: legends[i].pointStyle,
-
-              datasetIndices: [legends[i].datasetIndex, legends[i+1].datasetIndex]
-            });
+    interaction: {
+      mode: 'nearest',
+      axis: 'x',
+    },  
+    plugins: {
+      tooltip: {
+        filter: function(item, data) {
+          if (item.datasetIndex % 3 === 1) {
+            return false;
+          } else {
+            return true;
           }
-          return pairLegends.map((legend) => {
-            return {
-              ...legend,
-              hidden: legend.datasetIndices.every((datasetIndex) => chart.getDatasetMeta(datasetIndex).hidden)
-            };
-          });
+        },
+      },
+
+      legend: {
+        position: 'top',
+        labels: {
+          generateLabels: (chart) => {
+            const allDatasets = chart.data.datasets;
+            let labels = [];
+    
+            allDatasets.forEach((dataset, i) => {
+              if (i % 3 === 0) {
+                const color = dataset.borderColor;
+                const text = dataset.label;
+                const isHidden = dataset.hidden;
+    
+                labels.push({
+                  text: text,
+                  fillStyle: color,
+                  hidden: isHidden ?? false,
+                  lineCap: dataset.borderCapStyle,
+                  lineDash: dataset.borderDash,
+                  lineDashOffset: dataset.borderDashOffset,
+                  lineJoin: dataset.borderJoinStyle,
+                  lineWidth: dataset.borderWidth,
+                  strokeStyle: color,
+                  pointStyle: dataset.pointStyle,
+                  datasetIndex: i
+                });
+              }
+            });
+    
+            return labels;
+          }
+        },
+        onClick: (evt, item, legend) => {
+          let ci = legend.chart;
+          const allDatasets = ci.data.datasets;
+    
+          const clickedDatasetIndex = item.datasetIndex;
+          const startIndexOfGroup = clickedDatasetIndex - (clickedDatasetIndex % 3);
+    
+          for (let i = startIndexOfGroup; i < startIndexOfGroup + 3; i++) {
+            let meta = ci.getDatasetMeta(i);
+            const isHidden = meta.hidden === null ? !allDatasets[i].hidden : null;
+            meta.hidden = isHidden;
+          }
+    
+          item.hidden = item.hidden === null ? !item.hidden : null;
+          ci.update();
         }
       },
-      onClick: (evt, item, legend) => {
-        let ci = legend.chart;
-        item.datasetIndices.forEach((datasetIndex) => {
-          let meta = ci.getDatasetMeta(datasetIndex);
-          meta.hidden = meta.hidden === null ? !ci.data.datasets[datasetIndex].hidden : null;
-        });
-        ci.update();
-      }
-    },
+    
     title: {
       display: true,
       text: 'Price vs. Time',
     },
   },
+  
   scales: {
     x: {
       title: {
@@ -161,55 +173,80 @@ export function TestChart({ tableData }) {
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                  Implement Each Row
 ////////////////////////////////////////////////////////////////////////////////////////
+// The rest of your code remains the same...
 
-  tableData.forEach((row, index) => {
-    const color = colors[index % colors.length];
+tableData.forEach((row, index) => {
+  const color = colors[index % colors.length];
 
-    // if neither year1_salary nor year4_salary is present, just continue to the next row
-    if (
-      (row.year1_salary === null || row.year1_salary === undefined) &&
-      (row.year4_salary === null || row.year4_salary === undefined)
-    ) {
-      return;
-    }
+  // if neither year1_salary nor year4_salary is present, just continue to the next row
+  if (
+    (row.year1_salary === null || row.year1_salary === undefined) &&
+    (row.year4_salary === null || row.year4_salary === undefined)
+  ) {
+    return;
+  }
 
-    let year1_salary = row.year1_salary;
-    let year4_salary = row.year4_salary;
+  let year1_salary = row.year1_salary;
+  let year4_salary = row.year4_salary;
 
-    // if year1_salary is not present, estimate it as year4_salary divided by a 9% increase over 3 years
-    if (row.year1_salary === null || row.year1_salary === undefined) {
-      year1_salary = year4_salary / Math.pow(1 + 0.03, 3);
-    }
+  // if year1_salary is not present, estimate it as year4_salary divided by a 9% increase over 3 years
+  if (row.year1_salary === null || row.year1_salary === undefined) {
+    year1_salary = year4_salary / Math.pow(1 + 0.03, 3);
+  }
 
-    // if year4_salary is not present, estimate it as year1_salary increased by 9% over 3 years
-    if (row.year4_salary === null || row.year4_salary === undefined) {
-      year4_salary = year1_salary * Math.pow(1 + 0.03, 3);
-    }
+  // if year4_salary is not present, estimate it as year1_salary increased by 9% over 3 years
+  if (row.year4_salary === null || row.year4_salary === undefined) {
+    year4_salary = year1_salary * Math.pow(1 + 0.03, 3);
+  }
 
-    const logData = generateProjection(year1_salary, year4_salary);
+  const logData = generateProjection(year1_salary, year4_salary);
 
-    // solid line portion (from 1 to 4)
-    data.datasets.push({
-      label: `${row.input1}, ${row.input2}`,
-      data: [year1_salary, year4_salary],
-      borderColor: color,
-      backgroundColor: `${color}`,
-      fill: false,
-      order: index,
-    });
+// solid line portion (from 1 to 2)
+data.datasets.push({
+  label: `${row.input1}, ${row.input2}`,
+  data: [{x: labels[0], y: year1_salary}, {x: labels[1], y: year4_salary}],
+  borderColor: color,
+  backgroundColor: `${color}`,
+  fill: false,
+  order: datasetIndex++,
+  pointRadius: 4, // Adjust the value to change the size of the data points
+  pointHoverRadius: 7, // Adjust the value to change the size of the hover effect on data points
+  pointHoverBorderWidth: 5, // Adjust the value to change the border width of the hover effect on data points
+});
 
-    // dotted line portion
-    data.datasets.push({
-      label: `${row.input1}, ${row.input2}` + ' 3% Annual Increase Projection',
-      data: [...logData.slice(0)],
-      borderColor: color,
-      backgroundColor: `${color}`,
-      fill: false,
-      borderDash: [5, 10],
-      order: index,
-      pointHitRadius: 0,
-    });
+// Dotted line portion with no hover effect (from 2 to 3)
+data.datasets.push({
+  data: [{x: labels[1], y: year4_salary}, {x: labels[2], y: logData[2]}],
+  borderColor: color,
+  backgroundColor: `${color}`,
+  fill: false,
+  borderDash: [5, 10],
+  order: datasetIndex++,
+});
+
+// dotted line portion with hover effect (from 3 onward)
+let logDataPoints = logData.slice(2).map((value, index) => {
+  return {
+    x: labels[index+2],
+    y: value
+  };
+});
+
+data.datasets.push({
+  label: `${row.input1}, ${row.input2}` + ' 3% Annual Increase Projection',
+  data: logDataPoints,
+  borderColor: color,
+  backgroundColor: `${color}`,
+  fill: false,
+  borderDash: [5, 10],
+  order: datasetIndex++,
+  pointRadius: 4, // Adjust the value to change the size of the data points
+  pointHoverRadius: 7, // Adjust the value to change the size of the hover effect on data points
+  pointHoverBorderWidth: 5, // Adjust the value to change the border width of the hover effect on data points
   });
+});
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                  Return the Chart
