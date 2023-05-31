@@ -1,7 +1,13 @@
 THINGS TO WORK ON
-- Visualizations
-    - color code the chart like a heatmap
+- Graph:
     - line graph to compare colleges salaries
+        - Break even point
+        - Project vs. Non projection
+            - Dotted line
+            - Marked points
+        - Projection method
+
+- Color code the chart like a heatmap (done?)
 
 - For the major search only show majors for colleges that exist
 
@@ -18,4 +24,4 @@ technique to let users search for all 6000 colleges
 
 - Potentially get more columns via the data dictionary
 
-- 7 year median salary
+- 7 year median salary (possible?)
