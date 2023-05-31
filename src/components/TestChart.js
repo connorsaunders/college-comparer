@@ -136,17 +136,27 @@ export const options = {
 
 function generateProjection(y1, y4) {
   const years = [1, 4, 10, 15, 20, 25, 30]; // New years array
-  const r = 0.03;
+
+  //using power-log to calculate salary projections
+  const alpha = y1;
+  const beta = (y4 - y1) / Math.log(4);
+
+  //lower k-value for higher salaries to smooth projections
+  let k;
+  if (y1 > 100000){
+    k = 1.2;
+  }
+  else {
+    k = 1.8;
+  }
+
+  const y = (x) => alpha + beta * Math.pow(Math.log(x),k);
 
   let data = [y1, y4]; // Start with y1 and y4
 
-  let currentYearSalary = y4;
-
   for (let x = 2; x < years.length; x++) {
     // Compute the number of years to multiply the current salary by.
-    const numYears = years[x] - years[x - 1];
-    currentYearSalary *= Math.pow(1 + r, numYears);
-    data.push(currentYearSalary);
+    data.push(y(years[x]));
   }
 
   return data;
