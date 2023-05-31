@@ -2,10 +2,13 @@ THINGS TO WORK ON
 - Graph:
     - line graph to compare colleges salaries
         - Break even point
-        - Project vs. Non projection
-            - Dotted line
-            - Marked points
-        - Projection method
+            - Cumulative sum 
+    - Project vs. Non projection
+        - Dotted line
+        - Marked points
+    - Projection method
+    - Default y values (when no input)
+
 
 - Color code the chart like a heatmap (done?)
 
