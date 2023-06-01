@@ -1,0 +1,80 @@
+{
+  "name": "Parallax",
+  "particles": {
+      "number": {
+          "value": 150,
+          "density": {
+              "enable": true
+          }
+      },
+      "color": {
+          "value": "#ffffff"
+      },
+      "shape": {
+          "type": "circle"
+      },
+      "opacity": {
+          "value": {
+              "min": 0.1,
+              "max": 0.5
+          },
+          "animation": {
+              "enable": true,
+              "speed": 3,
+              "sync": false
+          }
+      },
+      "size": {
+          "value": {
+              "min": 1,
+              "max": 10
+          },
+          "animation": {
+              "enable": true,
+              "speed": 5,
+              "sync": false
+          }
+      },
+      "move": {
+          "enable": true,
+          "speed": 2
+      }
+  },
+  "interactivity": {
+      "events": {
+          "onHover": {
+              "enable": true,
+              "mode": "repulse",
+              "parallax": {
+                  "enable": true,
+                  "smooth": 5,
+                  "force": 60
+              }
+          },
+          "onClick": {
+              "enable": true,
+              "mode": "push"
+          }
+      },
+      "modes": {
+          "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 0.8
+          },
+          "repulse": {
+              "distance": 100
+          },
+          "push": {
+              "quantity": 3
+          },
+          "remove": {
+              "quantity": 2
+          }
+      }
+  },
+  "background": {
+      "color": "#9FC2BA"
+  }
+}

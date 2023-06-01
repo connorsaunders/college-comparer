@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import { tuitionQuery } from './apiqueries/TuitionAPICall';
 import { salariesQuery } from './apiqueries/SalaryAPICall';
@@ -10,6 +10,11 @@ import Header from "./components/Header";
 import InputTable from "./components/InputTable";
 import AboutCalculator from "./components/AboutCalculator";
 import { TestChart } from './components/TestChart';
+
+//background
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import particlesOptions from "./particles.json";
 
 function App() {
   const [input1, setInput1] = useState("");
@@ -27,8 +32,13 @@ function App() {
     setTableData([...tableData, { input1, input2, tuitionState, tuition1, year1_salary, year4_salary }]);
   };
 
+  const particlesInit = useCallback(main => {
+    loadFull(main);
+  }, [])
+
   return (
     <div>
+      <Particles options={particlesOptions} init={particlesInit} />
       <Header />
       <InputTable
       input1={input1}

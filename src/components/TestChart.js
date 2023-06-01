@@ -100,7 +100,7 @@ export const options = {
       },
     
     title: {
-      display: true,
+      display: false,
       text: 'Price vs. Time',
     },
   },
@@ -109,13 +109,13 @@ export const options = {
     x: {
       title: {
         display: true,
-        text: 'Post Graduation:',
+        text: 'Years Since Graduation',
       },
     },
     y: {
       title: {
         display: true,
-        text: 'Median Salary:',
+        text: 'Median Salary (USD)',
       },
       min: 0,
     
@@ -166,7 +166,7 @@ function generateProjection(y1, y4) {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 export function TestChart({ tableData }) {
-  const labels = ['1 Year', '4 Years', '10 Years', '15 Years', '20 Years', '25 Years', '30 Years'];
+  const labels = ['1', '4', '10', '15', '20', '25', '30'];
 
   const colors = [
     'rgb(255, 99, 132)', // Red
@@ -243,6 +243,7 @@ let logDataPoints = logData.slice(2).map((value, index) => {
 });
 
 data.datasets.push({
+  // eslint-disable-next-line no-useless-concat
   label: `${row.input1}, ${row.input2}` + ' 3% Annual Increase Projection',
   data: logDataPoints,
   borderColor: color,
@@ -263,7 +264,7 @@ data.datasets.push({
 ////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1 }}>
       <div style={{ height: '500px', width: '100%', maxWidth: '1100px', padding: '0 20px', marginBottom: '10px', marginTop: '10px' }}>
         <Line data={data} options={options} />
       </div>

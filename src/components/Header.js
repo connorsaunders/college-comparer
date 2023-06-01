@@ -2,9 +2,9 @@ import '../css/Header.css';
 
 function Header() {
     return (
-        <div>
+        <div className="header">
             <br />
-            <h1 className="my-header">
+            <h1>
                 <span className="highlight">College Cost </span> 
                 <span className="blue">Comparison Tool</span>
             </h1>

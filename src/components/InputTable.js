@@ -24,7 +24,7 @@ function InputTable(props) {
   }
 
   return (
-    <div className="input-table-container">
+    <div className="input-table-container table-shell">
       <div className="input-table-container">
         <SearchItems input1={input1} setInput1={setInput1} input2={input2} setInput2={setInput2} handleSubmit={handleSubmit} tuitionState={tuitionState} setTuitionState={setTuitionState} />
         <table className="my-table input-table">

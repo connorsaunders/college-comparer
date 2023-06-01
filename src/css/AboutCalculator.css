@@ -10,3 +10,8 @@
 .accordion-header {
   text-align: center;
 }
+
+.about-calculator {
+  position: relative;
+  z-index: 1;
+}
