@@ -1,3 +1,7 @@
+/********************************************************
+*                       Table                           *
+*********************************************************/
+
 table {
   margin: 0 auto;
   min-width: 900px;
@@ -11,42 +15,38 @@ table {
 }
 
 .my-table.input-table td, .my-table.input-table th {
-  
   border: 1px dotted #ccc;
   padding: 10px;
   word-wrap: break-word;
   white-space: normal;
   font-family: Lucida Sans Unicode, Lucida Grande;
-
-
-}
-/********** DELETE COLUMN ************/
-
-.my-table.input-table th:last-child {
-  border: none;
-  background-color: white;
-}
-/*****************************************/
-.my-table.input-table thead {
-  background-color: #f1f1f1;
-  border-bottom: none;
-  text-align: center;
-  
-}
-
-.my-table.input-table td:last-child, .my-table.input-table th:last-child {
-  border: none;
-}
-
-.center {
-  text-align: center;
 }
 
 .my-table.input-table .no-data {
   background-color: #262626;
   color: #ffffff;
 }
-/********** SLIDING ANIMATION ************/
+
+/********************************************************
+*                     Delete Column                     *
+*********************************************************/
+
+.my-table.input-table thead {
+  border-bottom: none;
+  text-align: center; 
+}
+
+.my-table.input-table thead th:not(.delete-cell) {
+  background-color: #ccc;
+}
+
+.my-table.input-table td:last-child, .my-table.input-table th:last-child {
+  border: none;
+}
+
+/********************************************************
+*                     Sliding Animation                 *
+*********************************************************/
 .my-table.input-table .slide-enter {
   transform: translateY(-100%);
 }
@@ -54,9 +54,9 @@ table {
   transform: translateY(0);
   transition: transform 300ms ease-out;
 }
-/*****************************************/
-
-/********** INDIVIDUAL CELLS ************/
+/********************************************************
+*                     Individual Cells                 *
+*********************************************************/
 .my-table.input-table .college-cell {
   width: 300px;
   font-size: 25px;
@@ -81,10 +81,21 @@ table {
 
 .my-table.input-table .delete-cell {
   width: 50px;
+
 }
 
 .my-table.input-table .years-cell {
   width: 75px;
   border-top: none;
 }
-/*****************************************/
+
+/********************************************************
+*                     Don't need?                       *
+*********************************************************/
+
+/*
+.center {
+  text-align: center;
+}
+*/
+

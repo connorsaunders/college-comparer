@@ -35,14 +35,13 @@ function InputTable(props) {
               <th className="residency-cell" rowSpan="2">Residency</th>
               <th className="cost-cell" colSpan="2">Cost of Attendance</th>
               <th className="salary-cell" colSpan="2">Median Salary</th>
-              <th className="delete-cell"></th> {/* Add an additional column for the delete button */}
+              <th className="delete-cell"></th> {}
             </tr>
             <tr>
               <th className="years-cell">1 yrs.</th>
               <th className="years-cell">4 yrs.</th>
               <th className="years-cell">1 yrs.</th>
               <th className="years-cell">4 yrs.</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
