@@ -2,7 +2,7 @@
 //                                  Imports
 ////////////////////////////////////////////////////////////////////////////////////////
 
-import React, { useState, useEffect }from 'react';
+import React , { useState, useEffect }from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -229,7 +229,6 @@ newData.datasets.push({
   pointHoverRadius: 7, // Adjust the value to change the size of the hover effect on data points
   pointHoverBorderWidth: 5, // Adjust the value to change the border width of the hover effect on data points
 });
-console.log(`year4_salary: ${year4_salary}, logData[2]: ${logData[2]}`);
 
 // Dotted line portion with no hover effect (from 2 to 3)
 newData.datasets.push({
@@ -250,6 +249,7 @@ let logDataPoints = logData.slice(2).map((value, index) => {
 });
 
 newData.datasets.push({
+  // eslint-disable-next-line no-useless-concat
   label: `${row.input1}, ${row.input2}` + ' 3% Annual Increase Projection',
   data: logDataPoints,
   borderColor: color,
@@ -273,11 +273,11 @@ setData(newData);
 //                                  Return the Chart
 ////////////////////////////////////////////////////////////////////////////////////////
 
-return (
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <div style={{ height: '500px', width: '100%', maxWidth: '1100px', padding: '0 20px', marginBottom: '10px', marginTop: '10px' }}>
-      <Line data={data} options={options} />
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <div style={{ height: '500px', width: '100%', maxWidth: '1100px', padding: '0 20px', marginBottom: '10px', marginTop: '10px' }}>
+        <Line data={data} options={options} />
+      </div>
     </div>
-  </div>
-);
+  );
 }
