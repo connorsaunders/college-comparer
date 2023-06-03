@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AboutCalculator() {
   return (
-    <Container className="mx-auto">
+    <Container className="mx-auto about-calculator">
       <Accordion className="accordion-items">
         <Accordion.Item eventKey="0">
           <Accordion.Header className="accordion-header">

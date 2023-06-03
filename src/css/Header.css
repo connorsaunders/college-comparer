@@ -1,9 +1,11 @@
-.my-header {
+.header {
   text-align: center;
   font-family: Lucida Sans Unicode, Lucida Grande;
   font-size: 50px;
   margin-bottom: 1px;
   letter-spacing: -1px; /* Decrease the letter spacing */
+  z-index: 1;
+  position: relative;
 }
 
 .my-subheader {
@@ -22,5 +24,4 @@
 .blue {
   color: #3e8e41; /* Make the text blue */
   font-weight: bold; /* Make the text bold */
-
 }

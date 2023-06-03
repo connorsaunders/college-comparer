@@ -2,6 +2,12 @@ table {
   margin: 0 auto;
   min-width: 900px;
   font-family: Lucida Sans Unicode, Lucida Grande;
+  opacity: 0.75;
+}
+
+.table-shell {
+  position: relative;
+  z-index: 1;
 }
 
 .my-table.input-table td, .my-table.input-table th {

@@ -100,7 +100,7 @@ export const options = {
       },
     
     title: {
-      display: true,
+      display: false,
       text: 'Price vs. Time',
     },
   },
@@ -109,13 +109,13 @@ export const options = {
     x: {
       title: {
         display: true,
-        text: 'Post Graduation:',
+        text: 'Years Since Graduation',
       },
     },
     y: {
       title: {
         display: true,
-        text: 'Median Salary:',
+        text: 'Median Salary (USD)',
       },
       min: 0,
     
@@ -166,7 +166,7 @@ function generateProjection(y1, y4) {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 export function TestChart({ tableData }) {
-  const labels = ['1 Year', '4 Years', '10 Years', '15 Years', '20 Years', '25 Years', '30 Years'];
+  const labels = ['1', '4', '10', '15', '20', '25', '30'];
 
   const colors = [
     'rgb(255, 99, 132)', // Red
