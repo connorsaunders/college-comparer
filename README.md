@@ -1,3 +1,7 @@
+Demo:
+
+![CollegeComparisonTool Demo](./CollegeComparisonTool.gif)
+
 THINGS TO WORK ON
 - GRAPH:
     - Break even point
